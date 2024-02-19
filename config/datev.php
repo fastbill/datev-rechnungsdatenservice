@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'client_id' => env('DATEV_CLIENT_ID'),
-    'client_secret' => env('DATEV_CLIENT_SECRET'),
-    'oicd' => [
+    'oidc' => [
+        'client_id' => env('DATEV_OIDC_CLIENT_ID'),
+        'client_secret' => env('DATEV_OIDC_CLIENT_SECRET'),
+        'redirect' => env('DATEV_OIDC_CALLBACK_URL', 'http://localhost:8000/auth/callback'),
         'sandbox' => [
             'issuer' => env('DATEV_OIDC_SANDBOX_ISSUER', 'https://login.datev.de/openidsandbox'),
             'jwks_uri' => env('DATEV_OIDC_SANDBOX_JWKS_URI', 'https://sandbox-api.datev.de/certs'),
